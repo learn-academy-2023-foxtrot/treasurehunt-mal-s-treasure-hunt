@@ -71,3 +71,75 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
 - As a developer, my variables are all named semantically.
 - As a developer, I have refactored and efficient code.
 - As a developer, I have my application [deployed as a live website](https://render.com/docs/deploy-create-react-app).
+
+*** NOTES ***
+
+### Getting Started
+-create branch for each user story
+-have project open in console
+
+### Create Grid
+-create components for square
+-use props destructuring
+
+```js
+const = Square = ({board}) => {
+    console.log("props", props)
+    return {
+        <>
+            <div className="square">
+
+            </div>
+        </>
+    }
+}
+// In App.js
+const App = {} => {
+    const [board, setBoard] = useState{[
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+        "?",
+
+    ]}
+}
+<Square board={board} />
+```
+- {board} calls on the array (board is the name of the state)
+
+```js
+const = Square = ({board}) => {
+    console.log("board", board)
+    return {
+        <>
+            <div className="grid">
+                {board.map({square, index} => {
+
+                 return(
+                     <div className="square" key={index}>
+                     {square}
+                 </div>
+                  )
+                 })}
+            </div>
+        </>
+    }
+}
+```
+-use display: flex in CSS to create 3x3 grid
+-font-size: use rem to make it proportional to page
+``` css
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 610px;
+    margin: 0 auto
+}
+```
+-perform git flow to closed out grid branch
+
